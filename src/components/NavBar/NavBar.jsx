@@ -8,13 +8,13 @@ function NavBar() {
   return (
     <div className="w-full ">
       <div className="absolute">
-        <img className="ml-[28rem]" src={BG} alt="" />
+        <img className="ml-[20rem] w-full h-[30rem]" src={BG} alt="" />
       </div>
-      <nav className="relative pl-40 pr-24 py-10 flex justify-between">
+      <nav className="relative px-32 py-10 flex justify-between">
         <div>
           <img className="" src={FS} alt="" />
         </div>
-        <ul className="flex pr-20 py-1">
+        <ul className="flex pr-[15rem] py-1">
           <li className="px-8 text-[14px] font-medium">Breakfast</li>
           <li className="px-8 text-[14px] font-medium">Lunch</li>
           <li className="px-8 text-[14px] font-medium">Dinner</li>
