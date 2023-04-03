@@ -3,9 +3,9 @@ import NavBar from "../components/NavBar/NavBar";
 
 function Mainlayout({ children }) {
   return (
-      <section className="">
-          <NavBar/>
-      <div className="full">{children}</div>
+    <section className="font-sans">
+      <NavBar />
+      <div className="w-full">{children}</div>
     </section>
   );
 }
