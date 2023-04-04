@@ -16,7 +16,7 @@ function NavBar() {
           <li className="px-8 text-[14px] font-medium">Dinner</li>
         </ul>
         <div className="cursor-pointer">
-          <img src={BAG} alt="" />
+          <img src={BAG} alt="imag" />
         </div>
       </nav>
     </div>

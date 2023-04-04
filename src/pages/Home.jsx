@@ -4,7 +4,7 @@ import { BsArrowDownCircleFill } from "react-icons/bs";
 import DOT from "../assets/pic/dotted.png";
 import Mainlayout from "../layout/Mainlayout";
 import { FOODS } from "./../misc/foods";
-import { AnimatePresence, motion} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 function Home() {
   const [foods, setFoods] = useState(FOODS);
