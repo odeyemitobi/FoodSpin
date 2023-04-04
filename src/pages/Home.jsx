@@ -4,6 +4,7 @@ import { BsArrowDownCircleFill } from "react-icons/bs";
 import DOT from "../assets/pic/dotted.png";
 import Mainlayout from "../layout/Mainlayout";
 import { FOODS } from "./../misc/foods";
+import { AnimatePresence, motion} from "framer-motion";
 
 function Home() {
   const [foods, setFoods] = useState(FOODS);
@@ -39,23 +40,44 @@ function Home() {
     <Mainlayout>
       <div className="relative flex justify-between w-full px-32">
         <div className="w-1/2">
-          <div className="w-[70%] mt-[8rem]">
-            <h1
-              style={{ color: foods[Math.floor(foods.length / 2)].color }}
-              className="text-[44px] leading-[66px] font-semibold"
+          <AnimatePresence initial={false}>
+            <motion.div
+              exit={{ position: "relative" }}
+              className="w-[70%] mt-[8rem]"
             >
-              {foods[Math.floor(foods.length / 2)].price}
-            </h1>
-            <p className="text-[36px] leading-[50px] font-medium">
-              {foods[Math.floor(foods.length / 2)].header}
-            </p>
-            <p className="w-[85%] capitalize text-[13px] leading-5 font-normal">
-              {foods[Math.floor(foods.length / 2)].words}
-            </p>
-            <div className="mt-5">
-              {foods[Math.floor(foods.length / 2)].btn}
-            </div>
-          </div>
+              <motion.h1
+                initial={{ opacity: 1, scale: 0.1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.1 }}
+                transition={{ type: "tween", duration: 0.7, ease: "easeIn" }}
+                style={{ color: foods[Math.floor(foods.length / 2)].color }}
+                className="text-[44px] leading-[66px] font-semibold"
+              >
+                {foods[Math.floor(foods.length / 2)].price}
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, scale: 0.1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.1 }}
+                transition={{ type: "tween", duration: 0.4, ease: "easeIn" }}
+                className="text-[36px] leading-[50px] font-medium"
+              >
+                {foods[Math.floor(foods.length / 2)].header}
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, scale: 0.1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.1 }}
+                transition={{ type: "tween", duration: 0.4, ease: "easeIn" }}
+                className="w-[85%] capitalize text-[13px] leading-5 font-normal"
+              >
+                {foods[Math.floor(foods.length / 2)].words}
+              </motion.p>
+              <div className="mt-5">
+                {foods[Math.floor(foods.length / 2)].btn}
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
         <div className="relative w-1/2">
           <div className=" w-full absolute mt-20 mr-[5rem]">
@@ -83,7 +105,7 @@ function Home() {
 
           <div className="w-full flex mt-[15rem] justify-center">
             <img
-              className="h-[10rem]"
+              className="h-[14rem]"
               src={foods[Math.floor(foods.length / 2)].image}
               alt=""
             />

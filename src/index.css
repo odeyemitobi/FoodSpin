@@ -20,3 +20,17 @@ code {
 p {
   color: #333333;
 }
+
+section::before{
+  content: '';
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  width: 90vh;
+  height: 100vh;
+  background: #FFEEDE;
+  border-radius: 50%;
+  transform-origin: bottom;
+  transform: translateX(-5%) scale(2);
+
+}
